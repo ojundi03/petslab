@@ -26,3 +26,8 @@ INSERT INTO household (eircode, number_of_occupants, max_number_of_occupants, ow
     ('Q45AB78', 2, 4, 1),
     ('R67CD01', 5, 7, 1),
     ('S23EF45', 1, 2, 0);
+
+-- USERS
+INSERT INTO myusers (email,password, firstname, lastname, county, role, enabled, account_non_expired, credentials_non_expired, account_non_locked) VALUES
+        ('johndoe@example.com','$2a$10$jPOV8aXOKupAi7UCJVvMaeEzBXjjLEblskQkB3ZAtNww2ATQjp8QK',
+         'John','Doe','Cork','ROLE_ADMIN',TRUE, TRUE, TRUE,TRUE );

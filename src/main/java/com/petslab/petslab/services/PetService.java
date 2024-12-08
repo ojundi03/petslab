@@ -15,6 +15,6 @@ public interface PetService {
     List<Pet> getPetsByType(String type);
     List<Pet> getPetsByBreed(String breed);
     PetStatDTO getPetStats();
-
+    void updatePetName(int id, String name);
 
 }

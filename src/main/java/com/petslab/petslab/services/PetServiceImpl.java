@@ -37,11 +37,17 @@ public class PetServiceImpl implements PetService{
                 id,
                 petDetails.getName(),
                 petDetails.getEircode(),
-                petDetails.getType(),
+                petDetails.getAnimal_type(),
                 petDetails.getBreed(),
                 petDetails.getAge()
         );
+    };
+
+    @Override
+    public void updatePetName(int id, String name){
+        petRepository.updatePetName(name, id);
     }
+
     @Override
     public void deletePetById(int id) {
         Pet pet = getPetById(id);

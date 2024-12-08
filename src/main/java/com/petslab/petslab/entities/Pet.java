@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
+@Table(name = "pets")
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -21,7 +22,7 @@ public class Pet {
     private String eircode;
 
     @Column(nullable = false)
-    private String type;
+    private String animal_type;
 
     @Column(nullable = false)
     private String breed;

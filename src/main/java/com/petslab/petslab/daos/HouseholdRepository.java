@@ -13,5 +13,8 @@ public interface HouseholdRepository extends JpaRepository<Household, String> {
 
 
     @Query("SELECT h FROM Household h WHERE NOT EXISTS (SELECT p FROM Pet p WHERE p.eircode = h.eircode)")
-    List<Household> findHouseholdNoPets();
+    List<Household> getHouseholdsNoPets();
+
+    @Query("SELECT h from Household h")
+    List<Household> getAllHouseholds();
 }

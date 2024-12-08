@@ -16,6 +16,9 @@ public class MyAspects {
                 x);
     }
 
-
+    @AfterReturning(value = "execution(* loadUserByUsername(String))", returning = "x")
+    public void afterReturningFromLoadUserByUsername(JoinPoint joinPoint, Object x) {
+        log.info("Loaded from {} user {}", joinPoint.getSignature().getName(), x);
+    }
 }
 

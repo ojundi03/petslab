@@ -2,6 +2,7 @@ package com.petslab.petslab.controllers;
 
 import com.petslab.petslab.entities.Pet;
 import com.petslab.petslab.services.PetService;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,10 +29,10 @@ public class PetController {
         return ResponseEntity.ok(petService.getPetById(id));
     }
 
-//    @PostMapping
-//    public ResponseEntity<Pet> createPet(@Valid @RequestBody Pet pet) {
-//        return ResponseEntity.status(HttpStatus.CREATED).body(petService.createPet(pet));
-//    }
+    @PostMapping
+    public ResponseEntity<Pet> createPet(@Valid @RequestBody Pet pet) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(petService.createPet(pet));
+    }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletePet(@PathVariable int id) {
@@ -39,8 +40,9 @@ public class PetController {
         return ResponseEntity.noContent().build();
     }
 
-//    @PatchMapping("/{id}")
-//    public ResponseEntity<Pet> changePetName(@PathVariable Long id, @RequestParam String name) {
-//        return ResponseEntity.ok(petService.updatePetName(id, name));
-//    }
+    @PatchMapping("/{id}")
+    public ResponseEntity<Pet> changePetName(@PathVariable int id, @RequestParam String name) {
+        petService.updatePetName(id, name);
+        return ResponseEntity.noContent().build();
+    }
 }
